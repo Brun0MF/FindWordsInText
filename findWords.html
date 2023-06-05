@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Find Words</title>
+</head>
+<style>
+.findcontainer{
+    overflow: auto;
+    height: 500px;
+    margin-bottom: 30px;
+}
+
+
+.txtFound{
+  background-color: #ff0;
+}
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+
+
+const cleanFind = () => {
+    //Limpar Pesquisa
+    $(".txtFound").removeClass("txtFound");
+} 
+
+
+
+const findword = () => {
+    //Procurar Input
+    cleanFind()
+    let word = $("#inputword").val().trim().replace(/[^\w\s]/g, "").toLowerCase();
+    let c = $(".findcontainer").contents();
+
+    Array.from(c).forEach(element => {
+        if (element.textContent.includes(word)) {
+            $(element).html(element.textContent.replace(new RegExp(word, "gi"), (word) => (`<span class="txtFound">${word}</span>`)).normalize());
+
+        }
+    });
+    if($(".txtFound") != undefined){
+        console.log($(".txtFound").eq(0).position().top)
+        $(".findcontainer").scrollTop($(".txtFound").eq(0).position().top);
+    }
+
+}
+
+
+
+
+
+</script>
+<body>
+    <table style="width: 30%;">
+        <tr><td align="center">🔍 <input type="text" id="inputword" value="" oninput="findword()"/> <hr></td></tr>
+        <tr><td align="left">
+
+
+        <div class="findcontainer">
+            <h1>Et quidem consectetur et minima corrupti vel distinctio unde. </h1>
+            <p>Lorem ipsum dolor sit amet. Id tenetur velitUt iure et reiciendis autem qui quod iusto sed voluptas dolor quo velit deleniti At odit nihil. Sed temporibus facere 
+            <strong>Id earum qui iusto provident quo Quis alias</strong> et error saepe quo ipsam voluptatem. Ut molestiae nihilEst distinctio et repellendus architecto id placeat provident aut inventore dolores ab commodi illum. Vel ullam ducimus est ipsum consequaturQuo sequi. Est reprehenderit deserunt33 consequatur qui obcaecati nihil ut commodi velit et porro atque et doloribus fuga. </p>
+            <h2>Ea nulla ipsa sit quas fuga. </h2>
+            <p>Qui vitae voluptatemQui modi aut quos dicta ea veniam dolores est enim quia ea illum illum! Ea quae sintSit soluta et adipisci dicta eos quia sequi hic fugiat voluptatem ea quisquam sunt. Ut galisum deleniti <em>A corrupti</em>
+            ut corporis repellendus. Ut maxime quisquam At sunt blanditiisEt vitae qui labore praesentium ut sunt suscipit et nulla ullam. Quo illo consequaturEt voluptatum sed praesentium suscipit sit fugit quis ut nulla dolorem. Aut dolor exercitationem sit facere commodiA eligendi sed nemo voluptatibus et consectetur provident At voluptatum illo et reprehenderit nihil! Aut deserunt perferendis <strong>Qui voluptatibus est vitae optio ab obcaecati soluta</strong>. </p><h3>Ad exercitationem sint ut nisi galisum et odit impedit. </h3>
+            <p>Ut quidem commodi eum cumque voluptatemIn eveniet in consequatur deserunt quo galisum dolores qui voluptas quia. Quo voluptate dolor et omnis neque <strong>Quo odit et provident quia et commodi odit quo blanditiis neque</strong>. Ut facilis internosAut rerum sit distinctio voluptas ut culpa eligendi est officiis dolorem qui similique repudiandae. Et iusto excepturi et sapiente temporibusea temporibus et suscipit rerum. Qui earum suscipitSed molestias ut nihil aperiam sed laborum veniam! Et impedit dolor non recusandae temporaet consequuntur et nesciunt corrupti nam possimus sint. Et dolore recusandaeEt iure et repudiandae repudiandae aut mollitia illo sed consequatur voluptatem ut tempore autem sed ipsum perferendis. </p>
+            <h4>Non voluptate quisquam id ducimus dicta. </h4><p>Hic minus sint id consectetur esseut reiciendis! Hic sunt maxime <em>Ex tempora aut doloribus illo et mollitia incidunt et vero eaque</em> eum omnis quasi et iste voluptas. Et saepe officiisa doloremque qui optio ipsam. Et laboriosam doloremque est suscipit temporavel alias. Ea earum accusantium qui fuga omniset tenetur et quasi dolorem non aliquid quos. Eum iure ducimusSed ipsa rem fuga placeat aut doloremque repudiandae et doloremque quidem et deserunt nobis. Ut veritatis facilis et voluptas omniset repellendus et maxime architecto. Aut voluptas temporeCum voluptatem quo maiores eligendi sed sapiente facilis ut repellat velit ut optio quisquam sed sint molestias.
+            Eos suscipit beatae est voluptatem teneturIn quos et animi voluptatem hic voluptas minus aut fugiat odit aut incidunt rerum. </p><h5>Hic impedit dignissimos At saepe voluptate? </h5><p>Ut aperiam laudantium et maiores exercitationemaut voluptatem et minus debitis. Aut laudantium voluptasQui Quis ut doloremque necessitatibus. Ea voluptatem ratione et nisi quaea quis qui quaerat dolores. Cum ipsam modiQui culpa id facilis deleniti qui sapiente placeat ut fugit quisquam ut quae sint ea facere alias. Ex odit voluptatibus ut maiores recusandae <em>Qui autem ut accusamus voluptatem in libero excepturi</em>! </p><p>Cum facere praesentium <strong>Et placeat et alias ipsum et earum temporibus</strong>. Aut Quis molestiasUt mollitia sed voluptatem rerum nam provident omnis et nesciunt fugit. Aut eveniet aliasEos numquam est voluptatem officiis. Qui dignissimos nulla vel voluptas facereAut distinctio quo omnis autem et aperiam tempore aut quis illum. Nam aspernatur aliquam id omnis nequeEt minima! Aut nulla galisum quo fugiat cumque <em>Sit accusamus qui rerum expedita eos nisi natus est saepe adipisci</em>! Sit iste deseruntUt minus 33 ullam autem a reprehenderit eveniet id assumenda sunt ea omnis quia non labore quia. </p><p>Aut accusantium eligendi <strong>Aut nemo sit dolor omnis in pariatur officia</strong> est eveniet placeat quo aspernatur voluptatibus. Aut voluptatibus reprehenderit ut dolor dolorEt enim eum quis maiores id molestiae iste? Vel autem mollitiaSed mollitia quo dolorum obcaecati et nesciunt omnis! 33 ipsa quos ut ipsam doloresqui iste sed harum assumenda. Sit neque quasId cupiditate ut aspernatur autem id tempora facilis et dolor deleniti? </p><p>Qui dolor dolor est voluptatem sintqui facere ut consequuntur quaerat. Qui vitae accusamus <strong>Qui voluptas</strong> in aliquid ullam. 33 dignissimos mollitia ea totam commodiVel eaque ea rerum accusantium qui excepturi minima aut voluptatem consequatur ut minus nulla. 33 laborum quam est sint reiciendis <em>Sed deleniti est harum nostrum</em> ut dolorem obcaecati est illum architecto non aspernatur impedit. Et ullam facilis et voluptatem nobisQuo dolorem cum voluptas saepe. Ut error temporibusUt voluptas aut repellendus assumenda et asperiores dolores qui corrupti voluptate qui officiis iure. Eos possimus eaqueRem reiciendis nam amet repellat aut incidunt soluta non delectus accusantium sit saepe deleniti et distinctio quibusdam. Est autem voluptas aut quas doloremAut ratione eos facere corporis et eaque excepturi et sint delectus eos excepturi expedita. Ut nostrum dictaquo aliquam qui harum nesciunt. </p><p>Quo itaque minimaNon animi est omnis amet. Est dolores rerumEum consequuntur est illo laudantium ut autem suscipit id dolorem molestiae. Et praesentium consequatur <em>Aut nobis et officiis omnis non quasi fugit</em> qui voluptatibus porro et Quis tempora et magnam minus. Est ratione ipsa non possimus delectussit delectus sed suscipit debitis. Eum reiciendis aperiamUt cumque est exercitationem dolorem et voluptas dolorum 33 velit vitae. Sit eius quiaAd ratione a aliquam quia cum earum laborum eos dolorem tenetur aut rerum tempora. Id quaerat aliquam <strong>Rem dolore id enim sint eos accusantium suscipit</strong> in suscipit assumenda et corporis sapiente. </p><p>Quo officia dolorem qui laudantium laborum <strong>Aut reprehenderit cum necessitatibus atque sed beatae adipisci</strong>! Cum ipsam consequaturEt excepturi id recusandae quas est quia voluptatum et doloremque molestiae ut accusantium eligendi. Et impedit quibusdam ea alias doloremUt cumque a beatae rerum ut quam velit qui omnis dolores. 33 optio sint qui quaerat officiis <em>Et expedita est quia repellat</em> in unde praesentium aut architecto esse aut omnis delectus. Qui quia adipisci ut consectetur sapienteex eveniet. </p><p>Aut galisum quia ut asperiores repellendusaut autem? Non cupiditate voluptas ut magni accusantiumNon illum ex ipsa delectus. Cum autem consequatur <em>Aut quis</em> sed iusto officiis in voluptatum nihil. Eos molestias rerumEt natus in nulla eaque qui libero libero. Aut deserunt doloribus <strong>Et obcaecati</strong> aut nihil deserunt. Sed totam corrupti ab velit doloresVel veniam qui internos sunt ea nostrum enim. Eos minus maxime qui voluptatibus ipsamRem sunt est minus architecto ut voluptatem fugiat. Est iure reprehenderitEt labore est dolore iusto vel asperiores nesciunt. Vel eius ipsam ut quos ipsaqui reprehenderit et itaque dicta. </p><p>33 optio nisi qui quaerat distinctio <strong>Et quas qui consequuntur odio sed veritatis veritatis eos quibusdam quibusdam</strong>. Vel corporis minus est enim mollitiaEx fuga et nihil dolores hic ducimus itaque. Et nulla velit et sequi officiaaut laborum est dolor maiores! Et natus suscipitSed quia rem doloremque quia? Et eius quosId soluta ea delectus eligendi. </p><p>Ad eaque itaqueEt quia qui voluptas doloribus a quia nulla sed autem ipsum est facere veniam est odit accusantium. Aut animi culpa in sint accusantiumVel blanditiis et tempore rerum et ullam fugit et repudiandae reiciendis ea itaque molestias. Qui labore fugit <em>Ea aspernatur aut neque rerum aut ipsum quaerat</em> rem quas nulla et nostrum error. Vel obcaecati rerumQui iure et dignissimos aliquam cum itaque culpa ut voluptates reiciendis quo repellendus animi et aperiam repellendus. Vel consequatur autemEt deserunt aut magnam ipsam aut rerum ipsam cum aspernatur cumque est sequi corporis et omnis reprehenderit. Qui pariatur asperioresEt delectus At voluptatibus omnis est accusamus corporis ut amet minima est excepturi voluptatem. Aut quisquam distinctio sit voluptas enim <strong>Hic maiores eum voluptatibus odit vel earum numquam vel reprehenderit ipsum</strong>. </p><p>Vel nemo rerum ut illo inciduntEt rerum qui rerum galisum sed aspernatur asperiores. Et beatae voluptatem sit sint tempora <em>Ea inventore sed voluptate corporis vel architecto quae non quia architecto</em>. Cum pariatur amet ab aspernatur doloremId voluptatum et placeat quod in nobis aperiam ut cupiditate laborum qui obcaecati quam? Ut tempora quas ea quis pariaturest error non enim accusamus et expedita autem! Vel molestiae ipsum <strong>Est quod ut officia porro aut internos nihil</strong> qui officia cumque ut unde laboriosam. </p><p>Qui beatae consequaturAut consequatur rem laboriosam ipsam et excepturi dolore et omnis magnam? Vel asperiores QuisQui sint qui autem debitis et reprehenderit rerum vel autem voluptatem qui fugiat dolor. Non praesentium dolor non delectus incidunt <strong>Rem incidunt eos numquam amet</strong> quo deserunt quasi sed nemo similique et reprehenderit fugiat. Et laboriosam dolorem est dolor molestiaeSed nobis et aliquid voluptatibus. 33 consectetur nisi sed itaque suntEst voluptatem ea dignissimos laborum sed illum aspernatur! </p><p>Et ducimus placeat <em>Ut eius</em> quo veniam quia sit esse tempora. Est harum obcaecatiVel alias sit eaque adipisci non dolores consequatur ut optio quibusdam et iste sapiente. Est quia voluptatem qui nulla suntAd dolorem et ipsa rerum et inventore enim. Sit aspernatur quia vel odio voluptatemQuo assumenda et assumenda galisum sit perferendis rerum in quae earum ut autem recusandae. Ex omnis consequatur hic quod consequatur <strong>Vel ducimus</strong>. Id laudantium vitaeNam tempora sed odit soluta in eaque nobis qui molestiae animi et blanditiis velit qui repellendus rerum. Hic assumenda nihil et voluptas modiEt consequatur non culpa illo et atque illo est nisi impedit. In dicta dolorumEst dolores et aperiam velit est quia omnis et cumque minus et excepturi reiciendis. Non quam suntAd sint et totam possimus. </p><p>Hic molestiae fugiat <em>Hic eligendi</em> qui rerum totam. Ex eius Quis At exercitationem quosEt nulla. Ut doloremque sapiente et facilis quaeEt aliquam qui velit amet et modi deserunt est fugiat ipsa ut nesciunt deserunt. Est molestiae odit aut quaerat evenietEt velit eos nesciunt laboriosam et officia molestias ea inventore aspernatur et vero minus! Et omnis laboriosamAut laudantium et temporibus consequuntur ab commodi amet. </p><p>In amet iustoQuo cupiditate eos dolores explicabo quo facilis mollitia. In dolore eligendi et fugiat sapienteest accusamus qui obcaecati eligendi aut exercitationem consequatur. Et earum deserunt ab dignissimos odioSed repellendus ut earum voluptas aut ipsa fugit et inventore cumque non deleniti molestiae. Est autem pariatur et atque placeatnon vitae. Et dolorem nihil sed accusamus errorEt omnis et dolor molestiae est tenetur aperiam ut soluta molestias. Id natus sunt <strong>Ab possimus et nihil quam 33 aliquam dolores</strong> est similique nostrum aut quia distinctio? Id perferendis dignissimosNon officia id ullam asperiores sit beatae nemo aut soluta facilis et quam inventore. Eum culpa optioEt quae et voluptas sapiente et enim soluta id aliquam iure cum delectus doloribus qui aliquam voluptatum. Rem explicabo numquam qui quia accusantiumEa facilis. </p><p>Eos tempore fugaQui labore qui suscipit natus 33 beatae eveniet qui ipsam expedita sit fugiat quam in excepturi beatae. Et sint dicta qui error voluptatemet veniam ut dolor delectus! Aut maxime voluptatum <strong>Et labore nam laboriosam excepturi ut dignissimos ipsam</strong> qui sint velit et eveniet porro est rerum delectus. Nam dolor libero et incidunt doloribusin eius in ipsum temporibus. Sed laboriosam iustoSit autem est labore consequatur ut quibusdam adipisci. Ut modi doloremque est accusamus dolorest cumque et provident rerum aut voluptatem velit. Et asperiores quas et quia totamHic dolor eos eveniet architecto. Eum eveniet molestias non fuga repellateum eius et nostrum alias. Vel voluptas pariaturVel ipsa ut odit expedita et quas officia vel numquam fugiat ut dolorem sint. </p>
+            <p>Qui sequi molestiae <em>Rem natus ea provident voluptatem et reprehenderit consequuntur</em>
+            ex quas repellat id temporibus omnis. Id molestias liberoaut temporibus ea officiis corrupti. Ea rerum quidemUt illum sed sapiente quam At quae reprehenderit qui voluptas illum et quod nobis 33 placeat accusantium. Est Quis molestias 
+            <strong>Cum laudantium in repellendus alias qui maiores autem</strong> sit sint doloribus eum quasi porro. Ut praesentium temporaEt odit aut necessitatibus ratione sed autem ipsam ut officiis ducimus aut tempore neque ut similique sint. </p>
+
+        
+
+              
+        </div>
+
+
+        <hr></td></tr>
+    </table>
+
+</body>
+</html>
